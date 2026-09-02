@@ -17,4 +17,4 @@ As a static web application built with HTML, CSS, and JavaScript, UESLocker requ
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/UESLocker.git
+   git clone https://github.com/YOUR_USERNAME/encode-decoder.git
