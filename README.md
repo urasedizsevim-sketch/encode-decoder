@@ -10,11 +10,11 @@ UESLocker is a fast, secure, and user-friendly web-based utility designed for te
 * Minimalist, lightweight, and intuitive user interface.
 
 ## Live Demo
-You can access the live version of the project here: [urasedizsevim.org/UESLocker](https://urasedizsevim.org/UESLocker)
+You can access the live version of the project here: [urasedizsevim.org](https://urasedizsevim.org)
 
 ## Installation and Setup
 As a static web application built with HTML, CSS, and JavaScript, UESLocker requires no backend configuration, server hosting, or build processes. To run the project locally:
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/UESLocker.git](https://github.com/YOUR_USERNAME/UESLocker.git)
+   git clone https://github.com/YOUR_USERNAME/UESLocker.git
