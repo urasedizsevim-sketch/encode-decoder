@@ -84,15 +84,15 @@
 
     <h2>UESLocker Şifreleyici</h2>
     
-    <textarea id="metinGirdisi" placeholder="Şifrelenecek veya çözülecek metni buraya girin..."></textarea>
-    <input type="number" id="keyGirdisi" placeholder="Şifre çözerken gereken Key'i girin">
+    <textarea id="metinGirdisi" placeholder="ŞifrelenEnter the text to be encoded or decoded here..."></textarea>
+    <input type="number" id="keyGirdisi" placeholder="Enter code Key(Just for decode)">
     
     <div class="btn-group">
-        <button py-click="sifrele_tiklandi">Şifrele</button>
-        <button py-click="coz_tiklandi">Şifreyi Çöz</button>
+        <button py-click="sifrele_tiklandi">Encode</button>
+        <button py-click="coz_tiklandi">Decode</button>
     </div>
 
-    <div id="sonuc">Sonuç burada görünecek...</div>
+    <div id="sonuc">The result will appear here...</div>
 
     <py-config>
     </py-config>
@@ -148,7 +148,7 @@
         def sifrele_tiklandi(event):
             girdi = document.getElementById("metinGirdisi").value
             if not girdi:
-                document.getElementById("sonuc").innerHTML = "Lütfen şifrelenecek bir metin girin!"
+                document.getElementById("sonuc").innerHTML = "Please enter the text to be encrypted!"
                 return
             sifreli_metin, anahtar = ues_sifrele(girdi)
             cikis_metni = f"<b>UESLocker:</b> {sifreli_metin} <br><br> <b>UESLocker(key):</b> {anahtar}"
@@ -158,26 +158,26 @@
             girdi = document.getElementById("metinGirdisi").value
             anahtar = document.getElementById("keyGirdisi").value
             if not girdi or not anahtar:
-                document.getElementById("sonuc").innerHTML = "Hata: Şifreyi çözmek için hem metni hem de Key değerini girmelisiniz!"
+                document.getElementById("sonuc").innerHTML = "Error: You must enter both the text and the Key value to decrypt!"
                 return
             cozulmus_metin = ues_sifre_coz(girdi, anahtar)
-            document.getElementById("sonuc").innerHTML = f"<b>Çözülen Metin:</b> {cozulmus_metin}"
+            document.getElementById("sonuc").innerHTML = f"<b>Decoded text:</b> {cozulmus_metin}"
     </script>
 
 <!-- Çerez (Cookie) Uyarısı Banner'ı (Açık Tema) -->
 <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background-color: #ffffff; color: #333333; padding: 15px; text-align: center; border-top: 1px solid #e0e0e0; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px;">
-  <span>Sitemizde analiz yapmak ve deneyiminizi geliştirmek için çerezler kullanılmaktadır. Detaylar için <a href="#" id="open-privacy" style="color: #0066cc; text-decoration: underline;">Gizlilik Politikası</a>'nı inceleyebilirsiniz.</span>
-  <button id="accept-cookies" style="background-color: #2563eb; color: #ffffff; border: none; padding: 8px 18px; margin-left: 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px;">Anladım</button>
+  <span>Our website uses cookies to analyze information and improve your experience. For details, please see below You can review the <a href="#" id="open-privacy" style="color: #0066cc; text-decoration: underline;">Privacy Policy</a></span>
+  <button id="accept-cookies" style="background-color: #2563eb; color: #ffffff; border: none; padding: 8px 18px; margin-left: 15px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px;">I understand.</button>
 </div>
 
 <!-- Gizlilik Politikası Açılır Penceresi (Açık Tema) -->
 <div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 10000; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <div style="background-color: #ffffff; color: #1f2937; width: 90%; max-width: 580px; max-height: 80vh; overflow-y: auto; padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); position: relative; border: 1px solid #e5e7eb;">
-    <h3 style="margin-top: 0; color: #111827; font-size: 20px; border-bottom: 1px solid #f3f4f6; padding-bottom: 10px;">Gizlilik Politikası</h3>
-    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">Bu web sitesi (urasedizsevim.org), ziyaretçilerin site kullanım deneyimini analiz etmek amacıyla <strong>Google Analytics</strong> hizmetini kullanmaktadır.</p>
-    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">Google Analytics, site trafiğini ve kullanım kalıplarını anlamamıza yardımcı olmak için cihazınıza çerezler (cookies) yerleştirir. Toplanan veriler anonim olup, doğrudan kişisel kimliğinizi tespit etmek amacıyla kullanılmaz.</p>
-    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">Google'ın verileri nasıl işlediği hakkında daha fazla bilgi edinmek için <a href="https://www.google.com/policies/privacy/partners/" target="_blank" style="color: #2563eb; text-decoration: underline;">Google Privacy & Terms</a> sayfasını ziyaret edebilirsiniz.</p>
-    <button id="close-privacy" style="background-color: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; margin-top: 10px;">Kapat</button>
+    <h3 style="margin-top: 0; color: #111827; font-size: 20px; border-bottom: 1px solid #f3f4f6; padding-bottom: 10px;">Privacy Policy</h3>
+    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">This website (urasedizsevim.org) uses the <strong>Google Analytics</strong> service to analyze visitors' site usage experience.</p>
+    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">Google Analytics places cookies on your device to help us understand site traffic and usage patterns. The data collected is anonymous and is not used to directly identify you personally.</p>
+    <p style="font-size: 14px; line-height: 1.6; color: #4b5563;">To learn more about how Google processes data, you can visit the <a href="https://www.google.com/policies/privacy/partners/" target="_blank" style="color: #2563eb; text-decoration: underline;">Google Privacy & Terms</a> </p>
+    <button id="close-privacy" style="background-color: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; margin-top: 10px;">Close</button>
   </div>
 </div>
 <script>
